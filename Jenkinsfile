@@ -23,8 +23,18 @@ pipeline {
 					reportFiles: 'index.html',
 					reportName: "Jacoco Report",
 					reportTitles: 'Jacoco Report'
+				])				
+			}
+		}
+		stage("Static code analysis") {
+			steps {
+				sh "./gradlew checkstyleMain"
+				publishHTML ([
+					reportDir: 'build/reports/checkstyle/',
+					reportFiles: 'main.html',
+					reportName: "Checkstyle Report"
 				])
-				
+
 			}
 		}
 	}
