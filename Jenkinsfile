@@ -21,7 +21,7 @@ pipeline {
 					keepAll: true, 
 					reportDir: 'build/reports/jacoco/test/html',
 					reportFiles: 'index.html',
-					reportName: "Jacoco Report"
+					reportName: "Jacoco Report",
 					reportTitles: 'Jacoco Report'
 				])
 				
