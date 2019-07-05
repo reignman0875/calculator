@@ -30,9 +30,13 @@ pipeline {
 			steps {
 				sh "./gradlew checkstyleMain"
 				publishHTML ([
+					allowMissing: false, 
+					alwaysLinkToLastBuild: false, 
+					keepAll: true, 
 					reportDir: 'build/reports/checkstyle/',
 					reportFiles: 'main.html',
-					reportName: "Checkstyle Report"
+					reportName: "Checkstyle Report",
+					reportTitles: 'Checkstyle Report'
 				])
 
 			}
